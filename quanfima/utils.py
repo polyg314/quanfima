@@ -38,7 +38,8 @@ def prepare_data(data, dilate_iterations=1, sigma=0.5):
     if data.ndim == 3:
         skeleton = morphology.skeletonize_3d(data_8bit)
     elif data.ndim == 2:
-        skeleton = morphology.skeletonize(data_8bit)
+#         skeleton = morphology.skeletonize(data_8bit)
+        skeleton = data_8bit
     else:
         raise ValueError('Incorrect number of data dimensions, it supports from 2 to 3 dimensions.')
 
