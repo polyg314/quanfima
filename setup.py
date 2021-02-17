@@ -20,7 +20,6 @@ setup(name='quanfima',
       author_email='roman.v.shkarin@gmail.com, andrei.shkarin@gmail.com',
       license='MIT',
       packages=['quanfima', 'docs'],
-      python_requires='>=2.6,<3',
       install_requires=[
           'matplotlib==2.0.2',
           'numpy>=1.13.3',
