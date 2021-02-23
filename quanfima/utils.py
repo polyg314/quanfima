@@ -33,7 +33,7 @@ def prepare_data(data, dilate_iterations=1, sigma=0.5):
         The original array, its skeleton and the thickened skeleton.
     """
     data_8bit = data.astype(np.uint8)
-    data_8bit = ndi.binary_fill_holes(data_8bit).astype(np.uint8)
+#     data_8bit = ndi.binary_fill_holes(data_8bit).astype(np.uint8)
 
     if data.ndim == 3:
         skeleton = morphology.skeletonize_3d(data_8bit)
