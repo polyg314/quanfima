@@ -110,7 +110,7 @@ def plot_orientation_map(orient_map, fiber_skel, radius_structure_elem=1,
 def plot_diameter_map(thickness_map, fiber_skel, radius_structure_elem=1,
                       figsize=(15, 15), cmap='hsv', tmin=None, tmax=None, dpi=200,
                       labelsize=20, label='Diameter, [pixels]', name=None,
-                      output_dir=None):
+                      output_dir=None, plot_title=None):
     """Plots the diameter map with the colorbar.
 
     Plots the diameter map from the provided diameters `thickness_map` and
@@ -169,6 +169,9 @@ def plot_diameter_map(thickness_map, fiber_skel, radius_structure_elem=1,
     fig = plt.figure(figsize=figsize)
     ax = plt.subplot(111)
     ax.set_axis_off()
+    
+    if(plot_title)L
+        plt.title(plot_title)
     
     im = ax.imshow(masked_thickness_map, cmap=cmap_obj, vmin=tmin, vmax=tmax)
     divider = make_axes_locatable(ax)
