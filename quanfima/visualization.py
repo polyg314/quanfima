@@ -170,7 +170,7 @@ def plot_diameter_map(thickness_map, fiber_skel, radius_structure_elem=1,
     ax = plt.subplot(111)
     ax.set_axis_off()
     
-    if(plot_title)L
+    if(plot_title):
         plt.title(plot_title)
     
     im = ax.imshow(masked_thickness_map, cmap=cmap_obj, vmin=tmin, vmax=tmax)
