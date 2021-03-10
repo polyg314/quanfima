@@ -185,7 +185,7 @@ def plot_diameter_map(thickness_map, fiber_skel, radius_structure_elem=1,
         divider2 = make_axes_locatable(ax_pdf)
         cax2 = divider2.append_axes('right', size="2.5%", pad=0.05)
         cbar2 = plt.colorbar(im2, cax=cax2)
-        cbar2.ax_pdf.tick_params(labelsize=labelsize)
+        cbar2.ax.tick_params(labelsize=labelsize)
         cbar2.set_label(label, fontsize=labelsize)
 
     if (output_dir is not None) and (name is not None):
