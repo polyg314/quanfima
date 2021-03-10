@@ -110,7 +110,7 @@ def plot_orientation_map(orient_map, fiber_skel, radius_structure_elem=1,
 def plot_diameter_map(thickness_map, fiber_skel, radius_structure_elem=1,
                       figsize=(15, 15), cmap='hsv', tmin=None, tmax=None, dpi=200,
                       labelsize=20, label='Diameter, [pixels]', name=None,
-                      output_dir=None, plot_title=None):
+                      output_dir=None, plot_title=None, ax_pdf=None):
     """Plots the diameter map with the colorbar.
 
     Plots the diameter map from the provided diameters `thickness_map` and
@@ -179,6 +179,14 @@ def plot_diameter_map(thickness_map, fiber_skel, radius_structure_elem=1,
     cbar = plt.colorbar(im, cax=cax)
     cbar.ax.tick_params(labelsize=labelsize)
     cbar.set_label(label, fontsize=labelsize)
+
+    if(ax_pdf):
+        im2 = ax_pdf.imshow(masked_thickness_map, cmap=cmap_obj, vmin=tmin, vmax=tmax)
+        divider2 = make_axes_locatable(ax_pdf)
+        cax2 = divider2.append_axes('right', size="2.5%", pad=0.05)
+        cbar2 = plt.colorbar(im2, cax=cax2)
+        cbar2.ax_pdf.tick_params(labelsize=labelsize)
+        cbar2.set_label(label, fontsize=labelsize)
 
     if (output_dir is not None) and (name is not None):
         if not os.path.exists(output_dir):
