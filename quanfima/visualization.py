@@ -169,6 +169,7 @@ def plot_diameter_map(thickness_map, fiber_skel, radius_structure_elem=1,
     fig = plt.figure(figsize=figsize)
     ax = plt.subplot(111)
     ax.set_axis_off()
+    plt.grid(None)   
     
     if(plot_title):
         plt.title(plot_title)
@@ -181,6 +182,7 @@ def plot_diameter_map(thickness_map, fiber_skel, radius_structure_elem=1,
     cbar.set_label(label, fontsize=labelsize)
 
     if(ax_pdf):
+        ax_pdf.set_axis_off()
         im2 = ax_pdf.imshow(masked_thickness_map, cmap=cmap_obj, vmin=tmin, vmax=tmax)
         divider2 = make_axes_locatable(ax_pdf)
         cax2 = divider2.append_axes('right', size="2.5%", pad=0.05)
